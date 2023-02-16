@@ -52,7 +52,7 @@ inventory = Inventory()
 def read_shoes_data():
     while True:
         try:
-            with open("c:/Users/44731/Dropbox/CS22110005477/Software Engineer Bootcamp/T32/inventory.txt", "r") as f:
+            with open("inventory.txt", "r") as f:
                 counter = 0
                 for line in f:
                     if counter == 0:
@@ -100,7 +100,7 @@ def capture_shoes():
                 quantity_input)
     inventory.inventory_list.append(shoe)
 
-    with open("c:/Users/44731/Dropbox/CS22110005477/Software Engineer Bootcamp/T32/inventory.txt", "a") as f:
+    with open("inventory.txt", "a") as f:
         f.write(f"{country_input},{code_input},{product_input},{cost_input},"
                 f"{quantity_input}\n")
     
@@ -144,7 +144,7 @@ def re_stock():
                             print("Error - please input an integer.")
                     shoe.quantity = new_qt
                 
-                    with open("c:/Users/44731/Dropbox/CS22110005477/Software Engineer Bootcamp/T32/inventory.txt", "w") as f:
+                    with open("inventory.txt", "w") as f:
                         f.write("Country,Code,Product,Cost,Quantity\n")
                         for shoe in inventory.inventory_list:
                             f.write(f"{shoe.country},{shoe.code},"
